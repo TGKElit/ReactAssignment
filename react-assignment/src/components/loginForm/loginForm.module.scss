@@ -1,0 +1,22 @@
+.loginForm {
+    display: flex;
+    flex-direction: column;
+
+    input {
+        margin-bottom: 2rem;
+    }
+
+    button {
+        all: unset;
+        height: 4rem;
+        width: 20rem;
+        background-color: rgb(255,255,255,0.5);
+        margin-bottom: 4rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgb(255,255,255,0.1);
+        }
+    }
+}
+
