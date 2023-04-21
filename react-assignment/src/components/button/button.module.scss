@@ -1,0 +1,19 @@
+.button {
+    all: unset;
+    background-color: #CC5500;
+    cursor: pointer;
+    min-height: fit-content;
+    min-width: fit-content;
+    width: 16rem;
+    padding: 0.5rem;
+    color: #111;
+    border-radius: 4rem;
+
+    &:hover {
+        background-color: #DD6633;
+    }
+
+    &:active {
+        background-color: #BB4400;
+    }
+}
