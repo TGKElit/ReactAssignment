@@ -1,3 +1,11 @@
+$background-color: #FFAC1C;
+$button-color : #CC5500;
+
+@font-face {
+  font-family: BubblegumSans;
+  src: url('./assets/fonts/BubblegumSans-Regular.ttf');
+}
+
 .App {
   text-align: center;
 }
