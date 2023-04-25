@@ -1,0 +1,26 @@
+.questionForm {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+
+    div {
+        display: grid;
+        grid-template-columns: 1fr 10fr;
+        align-items: center;
+        input {
+            all: unset;
+            background-color: white;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 100%;
+
+            &:checked {
+                background-color: black;
+            }
+
+            label {
+                text-align: center;
+            }
+        }
+    }
+}

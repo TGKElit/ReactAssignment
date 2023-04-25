@@ -1,4 +1,5 @@
 import Button from '../components/button';
+import QuestionForm from '../components/questionForm';
 
 const Home = (props) => {
     
@@ -6,6 +7,7 @@ const Home = (props) => {
         <>
             <p>Hello World</p>
             <Button type="submit">Hello</Button>
+            
         </>
     ];
 }
