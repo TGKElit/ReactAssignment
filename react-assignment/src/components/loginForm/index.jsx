@@ -3,23 +3,32 @@ import { useState } from "react";
 const LoginForm = (props) => {
   const [usernameInput, setUsernameInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
-  const [emailInput, setEmailInput] = useState("");
+  let emailInputParent = "";
 
-  function RegisterEmailInput({ authMode }) {
-    if (authMode === "register") {
-      return (
+  const handleEmailInput = (data) => {
+    emailInputParent = data;
+  };
+
+  function RegisterEmailInput(props) {
+    const [emailInputChild, setEmailInputChild] = useState("");
+
+    const handleOnChange = (event) => {
+      setEmailInputChild(event.target.value);
+      props.onEmailInput(emailInputChild);
+    };
+
+    if (props.authMode === "register") {
+      return [
         <>
           <label>Email</label>
           <input
             type="text"
             name="email"
-            value={emailInput}
-            onChange={(event) => {
-              setEmailInput(event.target.value);
-            }}
+            value={emailInputChild}
+            onChange={handleOnChange}
           />
-        </>
-      );
+        </>,
+      ];
     }
   }
 
@@ -37,7 +46,7 @@ const LoginForm = (props) => {
           return response.json();
         }
         if (response.status === 401) {
-          console.log("Login failed");
+          alert("Login Failed. Check password and username.");
         }
       })
       .then((json) => {
@@ -52,7 +61,7 @@ const LoginForm = (props) => {
   const registerUser = async () => {
     const registerData = new FormData();
     registerData.append("name", usernameInput);
-    registerData.append("email", emailInput);
+    registerData.append("email", emailInputParent);
     registerData.append("password", passwordInput);
 
     fetch("http://127.0.0.1:8000/api/register", {
@@ -62,13 +71,12 @@ const LoginForm = (props) => {
       .then((response) => {
         if (response.status === 201) {
           return response.json();
+        } else {
+          alert("Registration Failed");
         }
       })
       .then((json) => {
         sessionStorage.setItem("api_key", json.api_key);
-        setUsernameInput("");
-        setEmailInput("");
-        setPasswordInput("");
         window.location.href = "/";
       })
       .catch((error) => {
@@ -96,7 +104,10 @@ const LoginForm = (props) => {
         }}
       />
 
-      <RegisterEmailInput authMode={props.authMode}></RegisterEmailInput>
+      <RegisterEmailInput
+        authMode={props.authMode}
+        onEmailInput={handleEmailInput}
+      ></RegisterEmailInput>
 
       <label htmlFor="password">Password</label>
       <input
