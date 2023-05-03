@@ -13,6 +13,7 @@ function App() {
           <Route path="/" element={<Home path="/" loggedIn={false} />} />
           <Route path="/login" element={<Login path="/login" />} />
           <Route path="/question" element={<Question path="/question" />} />
+          <Route path="/answer" element={<Question path="/answer" />} />
         </Routes>
         {/*<Link to="/login">Login</Link>
         <Link to="/">Home</Link>*/}
