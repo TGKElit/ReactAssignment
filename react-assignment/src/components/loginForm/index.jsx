@@ -13,10 +13,10 @@ const LoginForm = (props) => {
           <input
             type="text"
             name="email"
-            value={emailInput}
+            /*value={emailInput}
             onChange={(event) => {
               setEmailInput(event.target.value);
-            }}
+            }}*/
           />
         </>
       );
