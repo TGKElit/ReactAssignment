@@ -1,9 +1,9 @@
-
-import './App.scss';
-import Login from './pages/Login';
-import Home from './pages/Home';
-import Question from './pages/Question'
-import {Routes, Route, Link} from 'react-router-dom';
+import "./App.scss";
+import Login from "./pages/Login";
+import Home from "./pages/Home";
+import Question from "./pages/Question";
+import { Routes, Route, Link } from "react-router-dom";
+import Register from "./pages/Register";
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home path="/" loggedIn={false} />} />
           <Route path="/login" element={<Login path="/login" />} />
+          <Route path="/register" element={<Register path="/register" />} />
           <Route path="/question" element={<Question path="/question" />} />
           <Route path="/answer" element={<Question path="/answer" />} />
         </Routes>
