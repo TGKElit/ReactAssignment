@@ -5,8 +5,7 @@ const Login = (props) => {
 
     return (
     <>
-        <LoginForm action="/" method="" buttonText="Login"/>
-        <LoginForm action="" method="get" buttonText="Register"/>
+        <LoginForm />
     </>
     )
 }
