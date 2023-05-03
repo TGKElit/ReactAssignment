@@ -4,6 +4,7 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import Question from './pages/Question'
 import {Routes, Route, Link} from 'react-router-dom';
+import GameCreation from './pages/GameCreation';
 
 function App() {
   return (
@@ -13,10 +14,8 @@ function App() {
           <Route path="/" element={<Home path="/" loggedIn={false} />} />
           <Route path="/login" element={<Login path="/login" />} />
           <Route path="/question" element={<Question path="/question" />} />
-          <Route path="/answer" element={<Question path="/answer" />} />
+          <Route path="/game-creation" element={<GameCreation path="/game-creation" />} />
         </Routes>
-        {/*<Link to="/login">Login</Link>
-        <Link to="/">Home</Link>*/}
       </header>
     </div>
   );

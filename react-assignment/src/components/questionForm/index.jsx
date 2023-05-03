@@ -3,6 +3,29 @@ import Button from '../button';
 import styles from './questionForm.module.scss';
 
 const QuestionForm = (props) => {
+
+    /*function handleSubmit(event) {
+        event.preventDefault();
+      
+        const formData = new FormData(event.target);
+        formData.append('api_key', sessionStorage.getItem("api_key"));
+      
+        fetch('http://127.0.0.1:8000/api/postAnswer', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+      
+    const form = document.querySelector('form');
+    form.addEventListener('submit', handleSubmit);
+    */
     return (
         <>
         <form className={styles.questionForm} action={props.action} method={props.method}>
