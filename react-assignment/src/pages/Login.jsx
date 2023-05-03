@@ -1,13 +1,11 @@
 import LoginForm from "../components/loginForm";
 
 const Login = (props) => {
-
-
-    return (
+  return (
     <>
-        <LoginForm />
+      <LoginForm authMode="login" />
     </>
-    )
-}
+  );
+};
 
 export default Login;
