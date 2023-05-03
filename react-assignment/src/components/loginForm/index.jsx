@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "../button";
 
 const LoginForm = (props) => {
   const [usernameInput, setUsernameInput] = useState("");
@@ -120,7 +121,7 @@ const LoginForm = (props) => {
         }}
       />
 
-      <button onClick={authMode}>Submit</button>
+      <Button handleClick={authMode}>Submit</Button>
     </>
   );
 };
