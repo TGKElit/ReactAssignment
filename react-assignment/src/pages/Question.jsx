@@ -11,7 +11,7 @@ const Question = (props) => {
         .then(response => response.json())
         .then(data => setData(data))
         .catch(error => console.error(error));
-    });
+    }, []);
 
     return [
         <>

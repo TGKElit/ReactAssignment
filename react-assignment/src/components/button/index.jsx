@@ -5,7 +5,7 @@ const Button = (props) => {
     
     if (props.type == "link") {
         return (
-            <Link className={styles.button} to={props.href}>{props.children}</Link>
+            <Link className={styles.button} to={props.href} onClick={props.handleClick}>{props.children}</Link>
         );
     }
     return (

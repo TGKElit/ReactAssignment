@@ -6,6 +6,8 @@ const Home = (props) => {
     return [
       <>
         <h1>Quizmaster</h1>
+        <Button type="link" href="/game-creation">New Game</Button>
+        <Button handleClick={() => {sessionStorage.clear();}}>Logout</Button>
       </>,
     ];
   } else {
