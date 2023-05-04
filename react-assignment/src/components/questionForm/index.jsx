@@ -13,7 +13,7 @@ const QuestionForm = (props) => {
         formData.append('api_token', sessionStorage.getItem("api_key"));
         formData.append('game_id', sessionStorage.getItem("game_id"));
       
-        fetch('http://127.0.0.1:8000/api/postAnswer', {
+        fetch('http://ec2-16-16-99-212.eu-north-1.compute.amazonaws.com:8000/api/postAnswer', {
             method: 'POST',
             body: formData
         })

@@ -7,7 +7,7 @@ const Question = (props) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/api/question?game_id=' + sessionStorage.getItem("game_id") + '&api_key=' + sessionStorage.getItem("api_key"))
+        fetch('http://ec2-16-16-99-212.eu-north-1.compute.amazonaws.com:8000/api/question?game_id=' + sessionStorage.getItem("game_id") + '&api_key=' + sessionStorage.getItem("api_key"))
         .then(response => response.json())
         .then(data => setData(data))
         .catch(error => console.error(error));
