@@ -7,10 +7,8 @@ const GameCreation = (props) => {
     function handleSubmit(event) {
         event.preventDefault();
         
-        console.log(event.target);
         const formData = new FormData(event.target.form);
         formData.append('api_key', sessionStorage.getItem("api_key"));
-        console.log(formData);
       
         fetch('http://127.0.0.1:8000/api/games', {
             method: 'POST',
