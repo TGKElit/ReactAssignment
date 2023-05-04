@@ -12,7 +12,7 @@ const Answer = (props) => {
 
         location.state.data.sumRes.forEach(element => {
             numberOfQuestions++;
-            if(element.result == "correct"){
+            if(element.result === "correct"){
                 numberOfCorrectAnswers++;
             }
         });

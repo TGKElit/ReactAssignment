@@ -3,7 +3,7 @@ import './App.scss';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Question from './pages/Question'
-import {Routes, Route, Link} from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 import GameCreation from './pages/GameCreation';
 import Register from "./pages/Register";
 import Answer from './pages/Answer';

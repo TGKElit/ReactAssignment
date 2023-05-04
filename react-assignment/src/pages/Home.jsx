@@ -1,5 +1,4 @@
 import Button from "../components/button";
-import QuestionForm from "../components/questionForm";
 
 const Home = (props) => {
   if (sessionStorage.getItem("api_key") !== null) {

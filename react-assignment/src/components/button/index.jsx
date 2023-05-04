@@ -3,7 +3,7 @@ import styles from './button.module.scss';
 
 const Button = (props) => {
     
-    if (props.type == "link") {
+    if (props.type === "link") {
         return (
             <Link className={styles.button} to={props.href} onClick={props.handleClick}>{props.children}</Link>
         );
