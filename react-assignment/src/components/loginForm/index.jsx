@@ -38,7 +38,7 @@ const LoginForm = (props) => {
     loginData.append("name", usernameInput);
     loginData.append("password", passwordInput);
 
-    fetch("http://ec2-16-16-99-212.eu-north-1.compute.amazonaws.com:8000/api/login", {
+    fetch("https://ec2-16-16-99-212.eu-north-1.compute.amazonaws.com/api/login", {
       method: "POST",
       body: loginData,
     })
@@ -65,7 +65,7 @@ const LoginForm = (props) => {
     registerData.append("email", emailInputParent);
     registerData.append("password", passwordInput);
 
-    fetch("http://ec2-16-16-99-212.eu-north-1.compute.amazonaws.com:8000/api/register", {
+    fetch("https://ec2-16-16-99-212.eu-north-1.compute.amazonaws.com/api/register", {
       method: "POST",
       body: registerData,
     })

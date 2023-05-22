@@ -10,7 +10,7 @@ const GameCreation = (props) => {
         const formData = new FormData(event.target.form);
         formData.append('api_key', sessionStorage.getItem("api_key"));
       
-        fetch('http://ec2-16-16-99-212.eu-north-1.compute.amazonaws.com:8000/api/games', {
+        fetch('https://ec2-16-16-99-212.eu-north-1.compute.amazonaws.com/api/games', {
             method: 'POST',
             body: formData
         })
