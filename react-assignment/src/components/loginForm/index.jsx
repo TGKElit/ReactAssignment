@@ -4,34 +4,7 @@ import Button from "../button";
 const LoginForm = (props) => {
   const [usernameInput, setUsernameInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
-  let emailInputParent = "";
-
-  const handleEmailInput = (data) => {
-    emailInputParent = data;
-  };
-
-  function RegisterEmailInput(props) {
-    const [emailInputChild, setEmailInputChild] = useState("");
-
-    const handleOnChange = (event) => {
-      setEmailInputChild(event.target.value);
-      props.onEmailInput(emailInputChild);
-    };
-
-    if (props.authMode === "register") {
-      return [
-        <>
-          <label>Email</label>
-          <input
-            type="text"
-            name="email"
-            value={emailInputChild}
-            onChange={handleOnChange}
-          />
-        </>,
-      ];
-    }
-  }
+  const [emailInput, setEmailInput] = useState("");
 
   const loginUser = async () => {
     const loginData = new FormData();
@@ -62,7 +35,7 @@ const LoginForm = (props) => {
   const registerUser = async () => {
     const registerData = new FormData();
     registerData.append("name", usernameInput);
-    registerData.append("email", emailInputParent);
+    registerData.append("email", emailInput);
     registerData.append("password", passwordInput);
 
     fetch("https://ec2-16-16-99-212.eu-north-1.compute.amazonaws.com/api/register", {
@@ -105,10 +78,22 @@ const LoginForm = (props) => {
         }}
       />
 
-      <RegisterEmailInput
-        authMode={props.authMode}
-        onEmailInput={handleEmailInput}
-      ></RegisterEmailInput>
+      {props.authMode === "register" ? (
+        <>
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            value={emailInput}
+            onChange={(event) => {
+              setEmailInput(event.target.value);
+            }}
+          />
+        </>
+        ) : (
+          null
+        )
+      }
 
       <label htmlFor="password">Password</label>
       <input
